@@ -1,0 +1,119 @@
+#team {
+  background: var(--color-card);
+  padding: var(--section-pad) 0;
+}
+
+.team-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+}
+
+.team-left {}
+
+.team-eyebrow {
+  font-family: 'Syne Mono', monospace;
+  font-size: var(--text-label);
+  color: var(--color-cyan);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.team-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: var(--text-h1);
+  color: var(--color-white);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+
+.team-body {
+  color: var(--color-dim);
+  font-size: var(--text-body);
+  line-height: 1.7;
+  max-width: 420px;
+}
+
+.team-right {
+  display: flex;
+  gap: 20px;
+}
+
+.team-member {
+  flex: 1;
+  background: var(--color-bg);
+  border-radius: var(--radius-card);
+  padding: 32px 24px;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: border-color 0.3s, transform 0.3s var(--ease-out);
+}
+.team-member:hover {
+  border-color: rgba(255,255,255,0.15);
+  transform: translateY(-4px);
+}
+
+.team-portrait {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: var(--color-creme);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--color-bg);
+  margin-bottom: 20px;
+}
+
+.team-name {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--color-white);
+  margin-bottom: 4px;
+}
+
+.team-role {
+  font-family: 'Syne Mono', monospace;
+  font-size: 11px;
+  color: var(--color-cyan);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.team-bio {
+  font-size: 13px;
+  color: var(--color-dim);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.team-socials {
+  display: flex;
+  gap: 12px;
+}
+.team-social {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.team-social:hover { border-color: var(--color-cyan); color: var(--color-cyan); }
+
+@media (max-width: 900px) {
+  .team-inner { grid-template-columns: 1fr; }
+  .team-right { flex-direction: row; }
+}
+@media (max-width: 480px) {
+  .team-right { flex-direction: column; }
+}

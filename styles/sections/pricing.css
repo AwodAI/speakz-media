@@ -1,0 +1,120 @@
+#pricing {
+  background: var(--color-bg);
+  padding: var(--section-pad) 0;
+}
+
+.pricing-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: var(--text-h1);
+  color: var(--color-white);
+  letter-spacing: -0.03em;
+  text-align: center;
+  margin-bottom: clamp(50px, 6vw, 80px);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  background: #161616;
+  border-radius: 20px;
+  padding: clamp(32px, 4vw, 48px);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  position: relative;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.pricing-card.featured {
+  border-color: var(--color-violet, #8b5cf6);
+  box-shadow: 0 0 0 1px var(--color-violet, #8b5cf6);
+}
+
+.pricing-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-cyan);
+  color: #0A0A0A;
+  font-family: 'Syne Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 6px 16px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.pricing-type {
+  font-family: 'Syne Mono', monospace;
+  font-size: var(--text-label);
+  color: var(--color-dim);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pricing-price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+/* "Auf Anfrage" statt Preis */
+.pricing-on-request {
+  font-family: 'Syne Mono', monospace;
+  font-weight: 700;
+  font-size: clamp(18px, 1.6vw, 22px);
+  color: var(--color-cyan);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid rgba(0,245,212,0.3);
+  padding: 10px 20px;
+  border-radius: 100px;
+  display: inline-block;
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+
+.pricing-features li {
+  font-family: 'Inter', sans-serif;
+  font-size: var(--text-body);
+  color: rgba(255,255,255,0.7);
+  padding-left: 28px;
+  position: relative;
+}
+
+.pricing-features li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300f5d4' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+
+.pricing-cta {
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .pricing-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,337 @@
+.cs-hero {
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: clamp(60px, 8vh, 100px);
+  background: var(--color-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.cs-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 60% 40%, rgba(0,245,212,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.cs-hero-back {
+  position: absolute;
+  top: 120px; left: clamp(20px, 4vw, 60px);
+  font-family: 'Syne Mono', monospace;
+  font-size: var(--text-label);
+  color: var(--color-dim);
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s;
+}
+.cs-hero-back:hover { color: var(--color-white); }
+
+.cs-hero-content { position: relative; z-index: 1; }
+
+.cs-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.cs-tag {
+  font-family: 'Syne Mono', monospace;
+  font-size: 11px;
+  color: var(--color-cyan);
+  letter-spacing: 0.12em;
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1px solid rgba(0,245,212,0.3);
+  background: rgba(0,245,212,0.05);
+}
+
+.cs-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(56px, 10vw, 130px);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: var(--color-white);
+  margin-bottom: 40px;
+}
+
+.cs-scroll-hint {
+  font-family: 'Syne Mono', monospace;
+  font-size: 11px;
+  color: var(--color-dim);
+  letter-spacing: 0.15em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.cs-scroll-line {
+  width: 40px; height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-dim));
+}
+
+/* ── Challenge ──────────────────────────────── */
+.cs-challenge {
+  background: var(--color-creme);
+  padding: var(--section-pad) 0;
+}
+.cs-challenge-inner {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: start;
+}
+.cs-challenge-label {
+  font-family: 'Syne Mono', monospace;
+  font-size: var(--text-label);
+  color: #888;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding-top: 8px;
+}
+.cs-challenge-text {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: clamp(22px, 3vw, 36px);
+  color: #0A0A0A;
+  line-height: 1.3;
+}
+
+/* ── Before/After Slider ────────────────────── */
+.cs-ba {
+  background: var(--color-bg);
+  padding: var(--section-pad) 0;
+}
+.cs-ba-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: var(--text-h1);
+  color: var(--color-white);
+  letter-spacing: -0.03em;
+  margin-bottom: 48px;
+}
+
+.cs-slider-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/7;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  cursor: ew-resize;
+}
+
+.cs-before, .cs-after {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne Mono', monospace;
+  font-size: var(--text-label);
+  letter-spacing: 0.1em;
+}
+.cs-before {
+  background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+  color: rgba(255,255,255,0.2);
+}
+.cs-after {
+  background: linear-gradient(135deg, #051a15, #0a2a1e, #0d1a2a);
+  color: rgba(0,245,212,0.3);
+  clip-path: inset(0 50% 0 0);
+  transition: none;
+}
+
+.cs-drag-handle {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  background: var(--color-white);
+  z-index: 10;
+  pointer-events: none;
+}
+.cs-drag-handle::before {
+  content: '← →';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--color-bg);
+  font-size: 12px;
+  font-family: 'Syne Mono', monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all;
+  cursor: ew-resize;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.cs-ba-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+.cs-ba-label {
+  font-family: 'Syne Mono', monospace;
+  font-size: 11px;
+  color: var(--color-dim);
+  letter-spacing: 0.1em;
+}
+
+/* ── Solution ───────────────────────────────── */
+.cs-solution {
+  background: var(--color-bg);
+  padding: var(--section-pad) 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.cs-solution-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+}
+.cs-solution-label {
+  font-family: 'Syne Mono', monospace;
+  font-size: var(--text-label);
+  color: var(--color-cyan);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.cs-solution-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: var(--text-h2);
+  color: var(--color-white);
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+.cs-solution-body {
+  color: var(--color-dim);
+  font-size: var(--text-body);
+  line-height: 1.7;
+}
+.cs-mockup-stack {
+  position: relative;
+  height: 400px;
+}
+.cs-mockup {
+  position: absolute;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+}
+.cs-mockup:nth-child(1) {
+  width: 80%; left: 0; top: 0;
+  background: linear-gradient(135deg, #0d1a2a, #051a15);
+  aspect-ratio: 16/10;
+}
+.cs-mockup:nth-child(2) {
+  width: 55%; right: 0; bottom: 0;
+  background: linear-gradient(135deg, #1a0a2e, #0d0520);
+  aspect-ratio: 4/5;
+}
+
+/* ── Results ────────────────────────────────── */
+.cs-results {
+  background: var(--color-creme);
+  padding: var(--section-pad) 0;
+}
+.cs-results-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: var(--text-h1);
+  color: #0A0A0A;
+  letter-spacing: -0.03em;
+  margin-bottom: clamp(50px, 6vw, 80px);
+}
+.cs-results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.cs-result-item {
+  text-align: center;
+}
+.cs-result-number {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(48px, 7vw, 80px);
+  color: #0A0A0A;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.cs-result-number span { color: var(--color-violet); }
+.cs-result-label {
+  font-family: 'Syne Mono', monospace;
+  font-size: var(--text-label);
+  color: #888;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ── Next Project ───────────────────────────── */
+.cs-next {
+  background: var(--color-bg);
+  padding: var(--section-pad) 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.cs-next-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+.cs-next-label {
+  font-family: 'Syne Mono', monospace;
+  font-size: var(--text-label);
+  color: var(--color-dim);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.cs-next-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: var(--text-h2);
+  color: var(--color-white);
+  letter-spacing: -0.02em;
+  transition: color 0.2s;
+}
+.cs-next-link:hover .cs-next-title { color: var(--color-cyan); }
+.cs-next-thumb {
+  width: 120px; height: 80px;
+  border-radius: 12px;
+  background: var(--color-card);
+  border: 1px solid rgba(255,255,255,0.06);
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color-dim);
+  font-family: 'Syne Mono', monospace;
+  font-size: 10px;
+}
+.cs-next-arrow {
+  font-size: 32px;
+  color: var(--color-white);
+  transition: transform 0.3s var(--ease-out), color 0.2s;
+}
+.cs-next-link:hover .cs-next-arrow { transform: translateX(8px); color: var(--color-cyan); }
+
+@media (max-width: 768px) {
+  .cs-challenge-inner  { grid-template-columns: 1fr; }
+  .cs-solution-inner   { grid-template-columns: 1fr; }
+  .cs-results-grid     { grid-template-columns: 1fr; gap: 24px; }
+  .cs-mockup-stack     { height: 260px; }
+  .cs-next-thumb       { display: none; }
+}

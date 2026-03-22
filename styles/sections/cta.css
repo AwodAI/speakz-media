@@ -1,0 +1,76 @@
+#cta {
+  height: 100vh;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-violet), #4a1a8a, #0a3a2a, var(--color-cyan));
+  background-size: 300% 300%;
+  animation: gradientMove 8s ease infinite;
+}
+
+.cta-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 0 20px;
+}
+
+.cta-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(36px, 6vw, 80px);
+  color: var(--color-white);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  max-width: 800px;
+}
+
+.cta-sub {
+  font-size: var(--text-body);
+  color: rgba(255,255,255,0.75);
+  max-width: 500px;
+}
+
+.cta-btn {
+  background: var(--color-white);
+  color: var(--color-bg);
+  padding: 18px 48px;
+  font-size: 17px;
+  transition: background 0.3s, color 0.3s, transform 0.3s var(--ease-out);
+}
+.cta-btn:hover {
+  background: var(--color-bg);
+  color: var(--color-cyan);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+
+.cta-socials {
+  display: flex;
+  gap: 20px;
+  margin-top: 16px;
+}
+.cta-social {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--color-white);
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+}
+.cta-social:hover {
+  border-color: var(--color-white);
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-2px);
+}

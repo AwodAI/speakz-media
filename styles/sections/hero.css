@@ -1,0 +1,124 @@
+#hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: clamp(40px, 6vh, 80px);
+  overflow: hidden;
+}
+
+/* Three.js canvas */
+#hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  filter: drop-shadow(0 0 40px rgba(0,245,212,0.3));
+}
+
+/* Grain overlay */
+#hero-grain {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Mobile fallback mesh */
+.hero-mesh-bg {
+  display: none;
+  position: absolute;
+  inset: 0;
+  background: conic-gradient(from 180deg at 50% 50%,
+    #0A0A0A 0deg,
+    #0d1a2e 90deg,
+    #0a1a1a 180deg,
+    #12052a 270deg,
+    #0A0A0A 360deg
+  );
+  background-size: 200% 200%;
+  animation: mobile-mesh 8s ease infinite;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.hero-left { max-width: 700px; }
+
+.hero-headline {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: var(--text-hero);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  margin-bottom: 28px;
+}
+
+.hero-headline .line-1 { color: var(--color-creme); display: block; }
+.hero-headline .line-2 {
+  color: var(--color-cyan);
+  display: block;
+  margin-left: clamp(20px, 4vw, 60px);
+}
+
+.hero-sub {
+  font-family: 'Syne Mono', monospace;
+  font-size: var(--text-label);
+  color: var(--color-dim);
+  letter-spacing: 0.1em;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-sub .typing-cursor {
+  width: 2px; height: 14px;
+  background: var(--color-cyan);
+  display: inline-block;
+  animation: typing-cursor 0.8s step-end infinite;
+}
+
+.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+  padding-bottom: 8px;
+}
+
+.hero-scroll {
+  font-family: 'Syne Mono', monospace;
+  font-size: 11px;
+  color: var(--color-dim);
+  letter-spacing: 0.15em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  writing-mode: vertical-rl;
+  gap: 12px;
+}
+
+.hero-scroll-arrow {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, var(--color-dim));
+  animation: bounce 1.5s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+  #hero-canvas { display: none; }
+  .hero-mesh-bg { display: block; }
+  .hero-content { flex-direction: column; align-items: flex-start; }
+  .hero-right { display: none; }
+}

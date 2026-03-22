@@ -1,0 +1,164 @@
+#modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10,10,10,0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s var(--ease-out);
+}
+
+#modal-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-box {
+  width: 100%;
+  max-width: 560px;
+  padding: clamp(32px, 5vw, 56px);
+  transform: translateY(60px);
+  transition: transform 0.5s var(--ease-out);
+}
+
+#modal-overlay.open .modal-box { transform: translateY(0); }
+
+.modal-close {
+  position: fixed;
+  top: 32px; right: 32px;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: none;
+  color: var(--color-white);
+  font-size: 20px;
+  cursor: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, background 0.2s;
+}
+.modal-close:hover { border-color: var(--color-white); background: rgba(255,255,255,0.05); }
+
+.modal-eyebrow {
+  font-family: 'Syne Mono', monospace;
+  font-size: var(--text-label);
+  color: var(--color-cyan);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.modal-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(28px, 4vw, 44px);
+  color: var(--color-white);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 40px;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-family: 'Syne Mono', monospace;
+  font-size: 11px;
+  color: var(--color-dim);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 14px 18px;
+  color: var(--color-white);
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  width: 100%;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--color-cyan);
+  background: rgba(0,245,212,0.04);
+}
+
+.form-select { cursor: none; }
+.form-select option { background: #1a1a1a; }
+
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-submit {
+  width: 100%;
+  padding: 18px;
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.modal-success {
+  display: none;
+  text-align: center;
+  padding: 40px 0;
+}
+.modal-success-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+.modal-success-text {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: clamp(20px, 3vw, 28px);
+  color: var(--color-cyan);
+  margin-bottom: 12px;
+}
+.modal-success-sub {
+  font-size: 15px;
+  color: var(--color-dim);
+}
+
+/* Mobile FAB */
+#fab-whatsapp {
+  position: fixed;
+  bottom: 24px; right: 24px;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+  transition: transform 0.2s var(--ease-out), box-shadow 0.2s;
+}
+#fab-whatsapp:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 30px rgba(37,211,102,0.5);
+}
+#fab-whatsapp svg { width: 26px; height: 26px; fill: #fff; }
+@media (min-width: 1025px) { #fab-whatsapp { display: none; } }

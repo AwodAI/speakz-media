@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/awedismosoyan/awod-ai-portfolio/**)",
+      "Bash(npm run:*)"
+    ]
+  }
+}

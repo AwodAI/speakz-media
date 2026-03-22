@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impressum · Speakz Media</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Syne+Mono&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/variables.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/sections/header.css" />
+  <link rel="stylesheet" href="styles/sections/footer.css" />
+  <style>
+    .legal-page { padding: 160px 0 100px; min-height: 100vh; }
+    .legal-title { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(36px,5vw,64px); letter-spacing:-0.03em; margin-bottom:48px; }
+    .legal-body { max-width:700px; color:var(--color-dim); line-height:1.8; font-size:var(--text-body); }
+    .legal-body h2 { font-family:'Syne',sans-serif; font-weight:700; font-size:20px; color:var(--color-white); margin:36px 0 12px; }
+    .legal-body p { margin-bottom:16px; }
+    .legal-body a { color:var(--color-cyan); }
+  </style>
+</head>
+<body>
+<header id="header">
+  <div class="container header-inner">
+    <a href="/" class="header-logo">SPEAKZ<span>.</span>MEDIA</a>
+    <nav><ul class="header-nav desktop-only">
+      <li><a href="/#portfolio">Arbeit</a></li>
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#team">Über uns</a></li>
+    </ul></nav>
+    <a href="/" class="btn btn-primary header-cta desktop-only">Zurück</a>
+    <button class="hamburger mobile-only"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav id="mobile-nav"><a href="/">Home</a><a href="/#portfolio">Arbeit</a><a href="/#services">Services</a></nav>
+
+<main class="legal-page">
+  <div class="container">
+    <h1 class="legal-title">Impressum</h1>
+    <div class="legal-body">
+      <h2>Angaben gemäß § 5 TMG</h2>
+      <p>
+        Marko Katovcic<br>
+        Fehlerstr. 1<br>
+        12161 Berlin
+      </p>
+
+      <h2>Vertreten durch</h2>
+      <p>Geschäftsführer: Lasko Huchthausen, Fr. Katovcic</p>
+
+      <h2>Kontakt</h2>
+      <p>
+        Telefon: +49 30 921 24 915<br>
+        E-Mail: <a href="mailto:wilhelm@lehmbrucks.de">wilhelm@lehmbrucks.de</a>
+      </p>
+
+      <h2>Verbraucherstreitbeilegung / Universalschlichtungsstelle</h2>
+      <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+    </div>
+  </div>
+</main>
+
+<footer id="footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Speakz Media GmbH</span>
+      <div class="footer-legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="agb.html">AGB</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+  window.addEventListener('scroll',()=>{ document.getElementById('header')?.classList.toggle('scrolled',window.scrollY>50); });
+  document.querySelector('.hamburger')?.addEventListener('click',function(){ this.classList.toggle('open'); document.getElementById('mobile-nav')?.classList.toggle('open'); });
+</script>
+</body>
+</html>

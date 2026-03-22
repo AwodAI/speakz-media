@@ -1,0 +1,52 @@
+#manifesto {
+  background: var(--color-creme);
+  padding: clamp(100px, 14vw, 180px) 0;
+}
+
+.manifesto-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.manifesto-headline {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: var(--text-h1);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #1a1a1a;
+  margin-bottom: 48px;
+}
+
+/* Each word starts washed out + blurred, scrolls sharp + dark via JS */
+.manifesto-headline .word {
+  display: inline-block;
+  color: #c8c0b4;
+  opacity: 0.35;
+  filter: blur(4px);
+  will-change: filter, opacity, color;
+}
+.manifesto-headline .word.active {
+  color: #0A0A0A;
+  opacity: 1;
+  filter: blur(0px);
+}
+
+.manifesto-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Syne Mono', monospace;
+  font-size: var(--text-label);
+  color: #888;
+  letter-spacing: 0.1em;
+}
+
+.live-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: pulse-dot 2s ease-in-out infinite;
+  flex-shrink: 0;
+}

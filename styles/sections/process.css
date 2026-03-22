@@ -1,0 +1,97 @@
+#process {
+  background: var(--color-creme);
+  padding: var(--section-pad) 0;
+}
+
+.process-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: var(--text-h1);
+  color: #0A0A0A;
+  letter-spacing: -0.03em;
+  margin-bottom: clamp(50px, 6vw, 80px);
+}
+
+.process-list { display: flex; flex-direction: column; gap: 0; }
+
+.process-step {
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding: 24px 0;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transition: background 0.3s;
+}
+.process-step:last-child { border-bottom: 1px solid rgba(0,0,0,0.1); }
+
+/* Active accent line on left edge */
+.process-step::before {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #0A0A0A;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.35s var(--ease-out);
+}
+.process-step.active::before {
+  transform: scaleY(1);
+}
+
+.process-step-header {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.process-num {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 56px;
+  color: rgba(0,0,0,0.15);
+  line-height: 1;
+  min-width: 80px;
+  transition: font-size 0.4s var(--ease-out), color 0.4s;
+}
+
+.process-step-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: rgba(0,0,0,0.4);
+  transition: font-size 0.4s var(--ease-out), color 0.4s;
+}
+
+.process-step-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s var(--ease-out), padding 0.4s;
+  padding-left: 112px;
+  color: #555;
+  font-size: var(--text-body);
+  line-height: 1.7;
+}
+
+/* Active state */
+.process-step.active .process-num {
+  font-size: 80px;
+  color: #0A0A0A;
+}
+.process-step.active .process-step-title {
+  font-size: 26px;
+  color: #0A0A0A;
+}
+.process-step.active .process-step-body {
+  max-height: 150px;
+  padding-top: 16px;
+  padding-bottom: 8px;
+}
+
+@media (max-width: 600px) {
+  .process-num { font-size: 36px; min-width: 50px; }
+  .process-step-body { padding-left: 82px; }
+  .process-step.active .process-num { font-size: 48px; }
+}
