@@ -137,30 +137,72 @@ function initPageAnimations() {
     });
   }
 
-  // ── Portfolio: Before/After mousemove ────────────
+  // ── Portfolio: Staggered card reveal ─────────────
+  gsap.fromTo('.portfolio-grid .portfolio-card',
+    { opacity: 0, y: 50 },
+    { opacity: 1, y: 0, duration: 0.9, stagger: 0.15, ease: 'expo.out',
+      scrollTrigger: { trigger: '.portfolio-grid', start: 'top 85%', once: true }
+    }
+  );
+
+  // Zone-rule line animation
+  document.querySelectorAll('.portfolio-zone-header').forEach(header => {
+    ScrollTrigger.create({
+      trigger: header, start: 'top 88%', once: true,
+      onEnter: () => header.classList.add('in-view')
+    });
+  });
+
+  // ── Portfolio: B/A mousemove + 3D tilt ───────────
   document.querySelectorAll('.portfolio-card').forEach(card => {
     const afterImg = card.querySelector('.ba-after-img');
     const divider  = card.querySelector('.ba-divider');
     let rect = null;
 
-    // Cache rect on enter — much cheaper than recalculating every mousemove
     card.addEventListener('mouseenter', () => {
       rect = card.getBoundingClientRect();
     });
 
     card.addEventListener('mousemove', (e) => {
       if (!rect) rect = card.getBoundingClientRect();
+
+      // Before/After reveal
       const pct = Math.min(100, Math.max(0, ((e.clientX - rect.left) / rect.width) * 100));
       if (afterImg) afterImg.style.clipPath = `inset(0 0 0 ${pct}%)`;
       if (divider)  divider.style.left = pct + '%';
+
+      // 3D tilt
+      const x = (e.clientX - rect.left) / rect.width  - 0.5;
+      const y = (e.clientY - rect.top)  / rect.height - 0.5;
+      gsap.to(card, {
+        rotateY: x * 6, rotateX: -y * 6,
+        duration: 0.5, ease: 'power2.out',
+        transformPerspective: 1200
+      });
     });
 
     card.addEventListener('mouseleave', () => {
       rect = null;
-      if (afterImg) afterImg.style.clipPath = 'inset(0 0 0 50%)';
-      if (divider)  divider.style.left = '50%';
+      gsap.to(card, { rotateY: 0, rotateX: 0, duration: 0.7, ease: 'expo.out' });
     });
   });
+
+  // ── Trust Strip: stagger reveal + mouse glow ─────
+  gsap.fromTo('.trust-card',
+    { opacity: 0, y: 30 },
+    { opacity: 1, y: 0, duration: 0.7, stagger: 0.1, ease: 'expo.out',
+      scrollTrigger: { trigger: '.trust-strip', start: 'top 88%', once: true }
+    }
+  );
+
+  const trustGrid = document.querySelector('.trust-strip-grid');
+  if (trustGrid) {
+    trustGrid.addEventListener('mousemove', (e) => {
+      const rect = trustGrid.getBoundingClientRect();
+      trustGrid.style.setProperty('--glow-x', (e.clientX - rect.left) + 'px');
+      trustGrid.style.setProperty('--glow-y', (e.clientY - rect.top)  + 'px');
+    });
+  }
 
   // ── Process steps ────────────────────────────────
   const steps = document.querySelectorAll('.process-step');

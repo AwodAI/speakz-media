@@ -80,13 +80,22 @@
     <div class="hero-mesh-bg"></div>
     <div class="container hero-content">
       <div class="hero-left">
+        <div class="hero-kicker">
+          <span class="hero-kicker-dot"></span>
+          Berlin · Design & Entwicklung
+        </div>
         <h1 class="hero-headline">
           <span class="line-1">Digitale</span>
           <span class="line-2">Erlebnisse.</span>
         </h1>
         <p class="hero-sub">
-          <span class="hero-typing">Websites</span><span class="typing-cursor"></span>
-          &nbsp;·&nbsp; Berlin
+          <span class="hero-sub-item hero-sub-item--typing">
+            <span class="hero-typing-shell">
+              <span class="hero-typing">Websites</span><span class="typing-cursor"></span>
+            </span>
+          </span>
+          <span class="hero-sub-divider" aria-hidden="true">·</span>
+          <span class="hero-sub-item">Berlin</span>
         </p>
         <div class="hero-ctas">
           <a href="#" class="btn btn-primary" data-modal="">Projekt starten</a>
@@ -150,17 +159,23 @@
         <div class="service-card cyan">
           <div class="service-num">01</div>
           <div class="service-visual">
-            <div class="thumb-grid">
-              <div class="thumb-item" style="--d:0.1s"></div>
-              <div class="thumb-item" style="--d:0.2s"></div>
-              <div class="thumb-item" style="--d:0.3s"></div>
+            <div class="service-ui service-ui--browser" aria-hidden="true">
+              <div class="service-ui-toolbar"><span></span><span></span><span></span></div>
+              <div class="service-ui-screen service-ui-screen--hero"></div>
+              <div class="service-ui-screen-row">
+                <div class="service-ui-screen"></div>
+                <div class="service-ui-screen"></div>
+              </div>
             </div>
           </div>
           <div class="service-bottom">
-            <h3 class="service-name">Webdesign</h3>
-            <p class="service-copy">Maßgeschneiderte Websites — modern, responsiv und auf Conversion optimiert.</p>
+            <h3 class="service-name">
+              <span class="service-name-line">Web</span>
+              <span class="service-name-line">Design</span>
+            </h3>
+            <p class="service-copy">Maßgeschneiderte Websites, modern, responsiv und klar auf Conversion optimiert.</p>
             <a class="service-more" href="#">Mehr erfahren →</a>
-            <div class="service-accordion">Von der ersten Skizze bis zum Live-Launch. Wir designen Websites, die eure Marke perfekt repräsentieren und Besucher in Kunden verwandeln.</div>
+            <div class="service-accordion">Von der ersten Skizze bis zum Live-Launch. Wir designen Websites, die eure Marke präzise repräsentieren und Besucher in Kunden verwandeln.</div>
           </div>
         </div>
 
@@ -168,17 +183,28 @@
         <div class="service-card violet">
           <div class="service-num">02</div>
           <div class="service-visual">
-            <div class="thumb-grid">
-              <div class="thumb-item" style="--d:0.15s;border-color:rgba(123,47,190,0.3);"></div>
-              <div class="thumb-item" style="--d:0.25s;border-color:rgba(123,47,190,0.3);"></div>
-              <div class="thumb-item" style="--d:0.35s;border-color:rgba(123,47,190,0.3);"></div>
+            <div class="service-ui service-ui--landing" aria-hidden="true">
+              <div class="service-ui-toolbar"><span></span><span></span><span></span></div>
+              <div class="service-ui-copy">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="service-ui-screen service-ui-screen--hero"></div>
+              <div class="service-ui-screen-row">
+                <div class="service-ui-screen"></div>
+                <div class="service-ui-screen"></div>
+              </div>
             </div>
           </div>
           <div class="service-bottom">
-            <h3 class="service-name">Landingpages</h3>
+            <h3 class="service-name">
+              <span class="service-name-line">Landing</span>
+              <span class="service-name-line">Pages</span>
+            </h3>
             <p class="service-copy">High-converting Landingpages für Produkte, Kampagnen und Launches.</p>
             <a class="service-more" href="#">Mehr erfahren →</a>
-            <div class="service-accordion">Eine starke Landingpage entscheidet über Erfolg oder Misserfolg einer Kampagne. Wir bauen Seiten, die konvertieren — mit klarer Struktur, überzeugendem Copy und starkem Design.</div>
+            <div class="service-accordion">Eine starke Landingpage entscheidet über Erfolg oder Misserfolg einer Kampagne. Wir bauen Seiten mit klarer Struktur, starkem Copy und fokussiertem Design.</div>
           </div>
         </div>
 
@@ -186,55 +212,91 @@
         <div class="service-card creme">
           <div class="service-num">03</div>
           <div class="service-visual">
-            <div style="display:flex;flex-direction:column;gap:8px;width:100%;">
-              <div style="height:8px;border-radius:4px;background:linear-gradient(to right,#7B2FBE,#00F5D4);width:80%;"></div>
-              <div style="height:8px;border-radius:4px;background:rgba(0,0,0,0.15);width:60%;"></div>
-              <div style="height:8px;border-radius:4px;background:rgba(0,0,0,0.1);width:90%;"></div>
-              <div style="height:8px;border-radius:4px;background:rgba(0,0,0,0.08);width:40%;"></div>
+            <div class="service-ui service-ui--app" aria-hidden="true">
+              <div class="service-ui-copy">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="service-ui-orb"></div>
+              <div class="service-ui-screen service-ui-screen--hero"></div>
+              <div class="service-ui-screen-row">
+                <div class="service-ui-screen"></div>
+                <div class="service-ui-screen"></div>
+              </div>
             </div>
           </div>
           <div class="service-bottom">
-            <h3 class="service-name" style="color:#0A0A0A;">Web Apps & SaaS</h3>
-            <p class="service-copy" style="color:#555;">Komplexe Web-Applikationen und SaaS-Produkte — skalierbar gebaut.</p>
-            <a class="service-more" href="#" style="color:#7B2FBE;">Mehr erfahren →</a>
-            <div class="service-accordion" style="color:#555;">Dashboards, Kundenportale, SaaS-Plattformen — wir bauen Web-Apps die wachsen. Sauber strukturiert, performant und intuitiv bedienbar.</div>
+            <h3 class="service-name">
+              <span class="service-name-line">Web Apps</span>
+              <span class="service-name-line">&amp; SaaS</span>
+            </h3>
+            <p class="service-copy">Komplexe Web-Applikationen und SaaS-Produkte, strukturiert und skalierbar gebaut.</p>
+            <a class="service-more" href="#">Mehr erfahren →</a>
+            <div class="service-accordion">Dashboards, Kundenportale und SaaS-Plattformen setzen wir sauber strukturiert, performant und intuitiv bedienbar um.</div>
           </div>
         </div>
 
         <!-- 04 SEO & Performance -->
-        <div class="service-card">
+        <div class="service-card seo">
           <div class="service-num">04</div>
           <div class="service-visual">
-            <div style="display:flex;align-items:flex-end;gap:6px;height:60px;">
-              <div style="width:12px;height:20%;border-radius:3px 3px 0 0;background:rgba(0,245,212,0.3);"></div>
-              <div style="width:12px;height:40%;border-radius:3px 3px 0 0;background:rgba(0,245,212,0.4);"></div>
-              <div style="width:12px;height:60%;border-radius:3px 3px 0 0;background:rgba(0,245,212,0.6);"></div>
-              <div style="width:12px;height:80%;border-radius:3px 3px 0 0;background:rgba(0,245,212,0.8);"></div>
-              <div style="width:12px;height:100%;border-radius:3px 3px 0 0;background:var(--color-cyan);"></div>
+            <div class="service-ui service-ui--seo" aria-hidden="true">
+              <div class="service-ui-pill-row">
+                <span></span>
+                <span></span>
+              </div>
+              <div class="service-chart-bars">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="service-chart-line">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
             </div>
           </div>
           <div class="service-bottom">
-            <h3 class="service-name">SEO & Performance</h3>
-            <p class="service-copy">Top-Rankings und blitzschnelle Ladezeiten — von Anfang an eingebaut.</p>
+            <h3 class="service-name">
+              <span class="service-name-line">SEO &amp;</span>
+              <span class="service-name-line">Performance</span>
+            </h3>
+            <p class="service-copy">Top-Rankings und schnelle Ladezeiten, von Anfang an sauber mitgedacht.</p>
             <a class="service-more" href="#">Mehr erfahren →</a>
-            <div class="service-accordion">SEO ist kein Nachgedanke — wir bauen es von Tag eins ein. Technisches SEO, Core Web Vitals, strukturierte Daten und Content-Strategie für nachhaltige Sichtbarkeit.</div>
+            <div class="service-accordion">SEO ist kein Nachgedanke. Wir berücksichtigen technische Struktur, Core Web Vitals, strukturierte Daten und Sichtbarkeit direkt im Aufbau.</div>
           </div>
         </div>
 
         <!-- 05 Hosting & Care -->
-        <div class="service-card">
+        <div class="service-card care">
           <div class="service-num">05</div>
           <div class="service-visual">
-            <div style="display:flex;flex-direction:column;align-items:center;gap:12px;">
-              <div style="width:48px;height:48px;border-radius:50%;border:2px solid rgba(0,245,212,0.4);display:flex;align-items:center;justify-content:center;font-size:20px;">🛡</div>
-              <div style="font-family:'Syne Mono',monospace;font-size:10px;color:var(--color-cyan);letter-spacing:0.1em;">99.9% UPTIME</div>
+            <div class="service-ui service-ui--care" aria-hidden="true">
+              <div class="service-status-pill">
+                <span class="service-status-dot"></span>
+                Live Monitoring
+              </div>
+              <div class="service-care-grid">
+                <div class="service-care-card service-care-card--wide"></div>
+                <div class="service-care-card"></div>
+                <div class="service-care-card"></div>
+              </div>
+              <div class="service-care-metric">99.9% Uptime</div>
             </div>
           </div>
           <div class="service-bottom">
-            <h3 class="service-name">Hosting & Care</h3>
-            <p class="service-copy">Hosting, SSL, Updates und Support — wir kümmern uns. Immer.</p>
+            <h3 class="service-name">
+              <span class="service-name-line">Hosting</span>
+              <span class="service-name-line">&amp; Care</span>
+            </h3>
+            <p class="service-copy">Hosting, SSL, Updates und Support. Wir kümmern uns dauerhaft und zuverlässig.</p>
             <a class="service-more" href="#">Mehr erfahren →</a>
-            <div class="service-accordion">Wir übernehmen alles: Hosting, SSL-Zertifikate, monatliche Updates, Sicherheits-Monitoring und direkter Support. Ihr konzentriert euch aufs Business.</div>
+            <div class="service-accordion">Wir übernehmen Hosting, SSL-Zertifikate, Updates, Sicherheits-Monitoring und direkten Support, damit ihr euch aufs Business konzentriert.</div>
           </div>
         </div>
 
@@ -254,9 +316,35 @@
       <a href="#" class="btn btn-ghost" style="color:var(--color-cyan);">Alle Projekte →</a>
     </div>
 
-    <div class="portfolio-grid">
+    <!-- ── ZONE 1: Website Redesigns ── -->
+    <div class="portfolio-zone-header reveal">
+      <span class="portfolio-zone-tag">WEBSITE REDESIGNS</span>
+      <p class="portfolio-zone-desc">Bestehende Seiten komplett neu gedacht. Slider ziehen für Before&nbsp;/&nbsp;After.</p>
+    </div>
 
-      <!-- Besser Sprechen -->
+    <div class="portfolio-grid portfolio-grid--two">
+
+      <!-- Lehmbrucks -->
+      <a href="lehmbrucks-de/" class="portfolio-card">
+        <div class="ba-container">
+          <div class="ba-before-img">BEFORE</div>
+          <div class="ba-after-img">AFTER</div>
+          <div class="ba-labels">
+            <span class="ba-label">BEFORE</span>
+            <span class="ba-label">AFTER</span>
+          </div>
+          <div class="ba-divider"></div>
+        </div>
+        <div class="portfolio-info">
+          <div>
+            <div class="portfolio-name">Lehmbrucks.de</div>
+            <div class="portfolio-tag">Website Redesign</div>
+          </div>
+          <div class="portfolio-arrow">→</div>
+        </div>
+      </a>
+
+      <!-- Besser Sprechen Web -->
       <a href="case/besser-sprechen/" class="portfolio-card">
         <div class="ba-container">
           <div class="ba-before-img">BEFORE</div>
@@ -270,73 +358,61 @@
         <div class="portfolio-info">
           <div>
             <div class="portfolio-name">Besser Sprechen</div>
-            <div class="portfolio-tag">App · Webdesign</div>
-          </div>
-          <div class="portfolio-arrow">→</div>
-        </div>
-      </a>
-
-      <!-- Flyly -->
-      <a href="case/flyly/" class="portfolio-card">
-        <div class="ba-container">
-          <div class="ba-before-img">BEFORE</div>
-          <div class="ba-after-img">AFTER</div>
-          <div class="ba-labels">
-            <span class="ba-label">BEFORE</span>
-            <span class="ba-label">AFTER</span>
-          </div>
-          <div class="ba-divider"></div>
-        </div>
-        <div class="portfolio-info">
-          <div>
-            <div class="portfolio-name">Flyly</div>
-            <div class="portfolio-tag">App · Webdesign</div>
-          </div>
-          <div class="portfolio-arrow">→</div>
-        </div>
-      </a>
-
-      <!-- Vorly -->
-      <a href="case/vorly/" class="portfolio-card">
-        <div class="ba-container">
-          <div class="ba-before-img">BEFORE</div>
-          <div class="ba-after-img">AFTER</div>
-          <div class="ba-labels">
-            <span class="ba-label">BEFORE</span>
-            <span class="ba-label">AFTER</span>
-          </div>
-          <div class="ba-divider"></div>
-        </div>
-        <div class="portfolio-info">
-          <div>
-            <div class="portfolio-name">Vorly</div>
-            <div class="portfolio-tag">App · Webdesign</div>
-          </div>
-          <div class="portfolio-arrow">→</div>
-        </div>
-      </a>
-
-      <!-- Applytix -->
-      <a href="case/applytix/" class="portfolio-card">
-        <div class="ba-container">
-          <div class="ba-before-img">BEFORE</div>
-          <div class="ba-after-img">AFTER</div>
-          <div class="ba-labels">
-            <span class="ba-label">BEFORE</span>
-            <span class="ba-label">AFTER</span>
-          </div>
-          <div class="ba-divider"></div>
-        </div>
-        <div class="portfolio-info">
-          <div>
-            <div class="portfolio-name">Applytix</div>
-            <div class="portfolio-tag">SaaS · Webdesign</div>
+            <div class="portfolio-tag">Website Redesign</div>
           </div>
           <div class="portfolio-arrow">→</div>
         </div>
       </a>
 
     </div>
+
+    <!-- ── ZONE 2: Apps & Produkte (Trust Strip) ── -->
+    <div class="trust-strip reveal">
+      <div class="trust-strip-header">
+        <span class="portfolio-zone-tag">AUCH ENTWICKELT</span>
+        <p class="portfolio-zone-desc">Apps und digitale Produkte, die täglich genutzt werden.</p>
+      </div>
+      <div class="trust-strip-grid">
+
+        <a href="case/besser-sprechen/" class="trust-card">
+          <div class="trust-card-icon trust-card-icon--bs">BS</div>
+          <div class="trust-card-body">
+            <div class="trust-card-name">Besser Sprechen</div>
+            <div class="trust-card-tag">App · iOS &amp; Android</div>
+          </div>
+          <div class="trust-card-arrow">→</div>
+        </a>
+
+        <a href="case/flyly/" class="trust-card">
+          <div class="trust-card-icon trust-card-icon--fl">FL</div>
+          <div class="trust-card-body">
+            <div class="trust-card-name">Flyly</div>
+            <div class="trust-card-tag">App · Booking Platform</div>
+          </div>
+          <div class="trust-card-arrow">→</div>
+        </a>
+
+        <a href="case/vorly/" class="trust-card">
+          <div class="trust-card-icon trust-card-icon--vo">VO</div>
+          <div class="trust-card-body">
+            <div class="trust-card-name">Vorly</div>
+            <div class="trust-card-tag">App · Web App</div>
+          </div>
+          <div class="trust-card-arrow">→</div>
+        </a>
+
+        <a href="case/applytix/" class="trust-card">
+          <div class="trust-card-icon trust-card-icon--ap">AP</div>
+          <div class="trust-card-body">
+            <div class="trust-card-name">Applytix</div>
+            <div class="trust-card-tag">SaaS · Recruiting</div>
+          </div>
+          <div class="trust-card-arrow">→</div>
+        </a>
+
+      </div>
+    </div>
+
   </div>
 </section>
 
